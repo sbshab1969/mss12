@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="acp.db.domain">
+    <class name="ConstClass" table="mss_const">
+        <id name="id" type="long" column="mssc_id">
+            <generator class="sequence">
+                <param name="sequence_name">mssc_seq</param>
+            </generator>
+        </id>
+        <property name="name" column="mssc_name"/>
+        <property name="value" column="mssc_value"/>
+ 
+        <sql-insert>
+             INSERT INTO MSS_CONST (mssc_name, mssc_value, mssc_id) VALUES (upper(?), ?, ?)
+        </sql-insert>
+        
+        <sql-update>
+             UPDATE MSS_CONST SET mssc_name = upper(?), mssc_value = ? WHERE mssc_id = ?
+        </sql-update>
+        
+        <sql-delete>
+             DELETE FROM MSS_CONST WHERE mssc_id = ?
+        </sql-delete>
+        
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,46 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">oracle.jdbc.OracleDriver</property>
+        <property name="connection.url">jdbc:oracle:thin:@10.141.1.1:1521:lotus11g</property>
+        <property name="connection.username">pbill03</property>
+        <property name="connection.password">pbill</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+<!-- 
+        <property name="hibernate.c3p0.min_size">5</property>
+        <property name="hibernate.c3p0.max_size">20</property>
+        <property name="hibernate.c3p0.timeout">300</property>
+        <property name="hibernate.c3p0.max_statements">50</property>
+        <property name="hibernate.c3p0.idle_test_period">3000</property>
+-->
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Disable the second-level cache  -->
+        <property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+        <!-- Echo all executed SQL to stdout -->
+        <property name="show_sql">true</property>
+        <property name="format_sql">true</property>
+
+        <mapping resource="acp/db/domain/ConstClass.hbm.xml"/>
+        <mapping resource="acp/db/domain/VarClass.hbm.xml"/>
+        <mapping resource="acp/db/domain/SourceClass.hbm.xml"/>
+        <mapping resource="acp/db/domain/ConfigClass.hbm.xml"/>
+        <mapping resource="acp/db/domain/FileLoadClass.hbm.xml"/>
+        <mapping resource="acp/db/domain/FileOtherClass.hbm.xml"/>
+    </session-factory>
+
+</hibernate-configuration>
+

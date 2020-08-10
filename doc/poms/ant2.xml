@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project default="create_run_jar" name="Create Runnable Jar for Project mss12 with Jar-in-Jar Loader">
+    <!--this file was created by Eclipse Runnable JAR file Export Wizard-->
+    <!--ANT 1.7 is required-->
+    <!--define folder properties-->
+    <property name="dir.buildfile" value="."/>
+    <property name="dir.workspace" value="${dir.buildfile}/../.."/>
+    <property name="dir.jarfile" value="${dir.buildfile}"/>
+    <target name="create_run_jar">
+        <jar destfile="${dir.jarfile}/mss12_2.jar">
+            <manifest>
+                <attribute name="Main-Class" value="org.eclipse.jdt.internal.jarinjarloader.JarRsrcLoader"/>
+                <attribute name="Rsrc-Main-Class" value="acp.Main"/>
+                <attribute name="Class-Path" value="."/>
+                <attribute name="Rsrc-Class-Path" value="./ hibernate-core-5.1.0.Final.jar jboss-logging-3.3.0.Final.jar hibernate-jpa-2.1-api-1.0.0.Final.jar javassist-3.20.0-GA.jar antlr-2.7.7.jar geronimo-jta_1.1_spec-1.1.1.jar jandex-2.0.0.Final.jar classmate-1.3.0.jar dom4j-1.6.1.jar xml-apis-1.0.b2.jar hibernate-commons-annotations-5.0.1.Final.jar logback-classic-1.1.2.jar logback-core-1.1.2.jar slf4j-api-1.7.6.jar slf4j-log4j12-1.7.6.jar log4j-1.2.17.jar ojdbc7-12.1.0.2.jar xdb6-12.1.0.2.jar orai18n-12.1.0.2.jar xmlparserv2-12.1.0.2.jar oraclepki-12.1.0.2.jar osdt_cert-12.1.0.2.jar osdt_core-12.1.0.2.jar"/>
+            </manifest>
+            <zipfileset src="jar-in-jar-loader.zip"/>
+            <fileset dir="${dir.workspace}/mss12/target/classes"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/org/hibernate/hibernate-core/5.1.0.Final" includes="hibernate-core-5.1.0.Final.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/org/jboss/logging/jboss-logging/3.3.0.Final" includes="jboss-logging-3.3.0.Final.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final" includes="hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/org/javassist/javassist/3.20.0-GA" includes="javassist-3.20.0-GA.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/antlr/antlr/2.7.7" includes="antlr-2.7.7.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1" includes="geronimo-jta_1.1_spec-1.1.1.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/org/jboss/jandex/2.0.0.Final" includes="jandex-2.0.0.Final.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/com/fasterxml/classmate/1.3.0" includes="classmate-1.3.0.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/dom4j/dom4j/1.6.1" includes="dom4j-1.6.1.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/xml-apis/xml-apis/1.0.b2" includes="xml-apis-1.0.b2.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/org/hibernate/common/hibernate-commons-annotations/5.0.1.Final" includes="hibernate-commons-annotations-5.0.1.Final.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/ch/qos/logback/logback-classic/1.1.2" includes="logback-classic-1.1.2.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/ch/qos/logback/logback-core/1.1.2" includes="logback-core-1.1.2.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/org/slf4j/slf4j-api/1.7.6" includes="slf4j-api-1.7.6.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/org/slf4j/slf4j-log4j12/1.7.6" includes="slf4j-log4j12-1.7.6.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/log4j/log4j/1.2.17" includes="log4j-1.2.17.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/com/oracle/jdbc/ojdbc7/12.1.0.2" includes="ojdbc7-12.1.0.2.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/com/oracle/jdbc/xdb6/12.1.0.2" includes="xdb6-12.1.0.2.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/com/oracle/jdbc/orai18n/12.1.0.2" includes="orai18n-12.1.0.2.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/com/oracle/jdbc/xmlparserv2/12.1.0.2" includes="xmlparserv2-12.1.0.2.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/com/oracle/jdbc/oraclepki/12.1.0.2" includes="oraclepki-12.1.0.2.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/com/oracle/jdbc/osdt_cert/12.1.0.2" includes="osdt_cert-12.1.0.2.jar"/>
+            <zipfileset dir="C:/Users/ДНС/.m2/repository/com/oracle/jdbc/osdt_core/12.1.0.2" includes="osdt_core-12.1.0.2.jar"/>
+        </jar>
+    </target>
+</project>

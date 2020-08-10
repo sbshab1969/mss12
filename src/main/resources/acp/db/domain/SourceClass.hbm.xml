@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="acp.db.domain">
+    <class name="SourceClass" table="mss_source">
+        <id name="id" type="long" column="msss_id">
+            <generator class="sequence">
+               <param name="sequence_name">msss_seq</param>
+            </generator>
+        </id>
+        <property name="name" column="msss_name"/>
+        <property name="dateCreate" type="timestamp" column="msss_dt_create"/>
+        <property name="dateModify" type="timestamp" column="msss_dt_modify"/>
+        <property name="owner" column="msss_owner"/>
+    </class>
+</hibernate-mapping>

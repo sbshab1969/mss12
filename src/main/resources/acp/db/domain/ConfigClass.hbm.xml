@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="acp.db.domain">
+    <class name="ConfigClass" table="mss_options">
+        <id name="id" type="long" column="msso_id">
+            <generator class="sequence">
+               <param name="sequence_name">msso_seq</param>
+            </generator>
+        </id>
+        <property name="name" type="string" column="msso_name"/>
+        
+        <property name="configR" type="string" column="msso_config.getStringVal()" 
+                       insert="false" update="false"/>  
+        <property name="configW" type="string" column="msso_config"/>  
+        
+        <property name="dateBegin" type="timestamp" column="msso_dt_begin"/>
+        <property name="dateEnd" type="timestamp" column="msso_dt_end"/>
+        <property name="comment" type="string" column="msso_comment"/>
+        <property name="dateCreate" type="timestamp" column="msso_dt_create"/>
+        <property name="dateModify" type="timestamp" column="msso_dt_modify"/>
+        <property name="owner" type="string" column="msso_owner"/>
+        <property name="sourceId" type="long" column="msso_msss_id"/>
+
+        <many-to-one name="source" column="msso_msss_id"
+                     insert="false" update="false"/> 
+
+<!--     
+        <many-to-one name="source" column="msso_msss_id"
+         class="SourceClass" lazy="false"  lazy="proxy" fetch="join"
+         not-found="ignore" cascade="none" /> 
+-->
+    </class>
+</hibernate-mapping>

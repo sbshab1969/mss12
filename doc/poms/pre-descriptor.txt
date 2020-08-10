@@ -1,0 +1,15 @@
+http://maven.apache.org/plugins/maven-assembly-plugin/descriptor-refs.html
+
+Pre-defined Descriptor Files
+
+There are four predefined descriptor formats available for reuse, packaged within the Assembly Plugin. 
+Their descriptorIds are:
+
+    bin
+    jar-with-dependencies
+    src
+    project
+
+An uber-JAR—also known as a fat JAR or JAR with dependencies—is a JAR file that contains not only a Java program, 
+but embeds its dependencies as well. 
+We recommend against using uber-JARs. They introduce many problems for downstream consumers. 

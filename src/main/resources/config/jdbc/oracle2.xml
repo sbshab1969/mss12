@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+  <comment>Oracle ssh</comment>
+  <entry key="user">pbill03</entry>
+  <entry key="password">pbill</entry>
+  <entry key="connectionString">jdbc:oracle:thin:@127.0.0.1:11521:lotus11g</entry>
+  <entry key="driver">oracle.jdbc.OracleDriver</entry>
+</properties>

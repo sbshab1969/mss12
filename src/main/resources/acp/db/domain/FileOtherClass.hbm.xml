@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="acp.db.domain">
+    <class name="FileOtherClass" table="mss_logs">
+        <id name="id" type="long" column="mssl_id">
+            <generator class="sequence">
+               <param name="sequence_name">mssl_seq</param>
+            </generator>
+        </id>
+        <property name="dateEvent" type="timestamp" column="mssl_dt_event"/>
+        <property name="descr" column="mssl_desc"/>
+        <property name="refId" type="long" column="mssl_ref_id"/>
+        <property name="confId" type="long" column="mssl_msso_id"/>
+        <property name="constId" type="long" column="mssl_mssc_id"/>
+    </class>
+</hibernate-mapping>

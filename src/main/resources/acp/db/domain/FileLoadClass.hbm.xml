@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="acp.db.domain">
+    <class name="FileLoadClass" table="mss_files">
+        <id name="id" type="long" column="mssf_id">
+            <generator class="sequence">
+               <param name="sequence_name">mssf_seq</param>
+            </generator>
+        </id>
+        <property name="name" type="string" column="mssf_name"/>
+        <property name="md5" type="string" column="mssf_md5"/>
+        <property name="dateCreate" type="timestamp" column="mssf_dt_create"/>
+        <property name="dateWork" type="timestamp" column="mssf_dt_work"/>
+        <property name="owner" type="string" column="mssf_owner"/>
+
+        <property name="statisticR" type="string" column="mssf_statistic.getStringVal()"
+                        insert="false" update="false"/>
+        <property name="statisticW" type="string" column="mssf_statistic"/>
+
+        <property name="configId" type="long" column="mssf_msso_id"/>
+        <property name="recAll" type="int" column="mssf_rec_all"/>
+        <property name="recErr" type="int" column="mssf_rec_er"/>
+        <property name="secAll" type="int" column="mssf_sec_all"/>
+        <property name="secErr" type="int" column="mssf_sec_er"/>
+
+        <many-to-one name="config" column="mssf_msso_id"
+                     insert="false" update="false"/> 
+
+    </class>
+</hibernate-mapping>

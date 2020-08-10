@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="acp.db.domain">
+    <class name="VarClass" table="mss_vars">
+        <id name="id" type="long" column="mssv_id">
+            <generator class="sequence">
+               <param name="sequence_name">mssv_seq</param>
+            </generator>
+        </id>
+        <property name="name" type="string" column="mssv_name"/>
+        <property name="type" type="string" column="mssv_type"/>
+        <property name="len"  type="int" column="mssv_len"/>
+        <property name="valuen" type="double" column="mssv_valuen"/>
+        <property name="valuev" type="string" column="mssv_valuev"/>
+        <property name="valued" type="timestamp" column="mssv_valued"/>
+        <property name="dateModify" type="timestamp" column="mssv_last_modify"/>
+        <property name="owner" type="string" column="mssv_owner"/>
+
+    </class>
+</hibernate-mapping>

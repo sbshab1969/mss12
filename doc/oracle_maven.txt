@@ -1,0 +1,5 @@
+To access the Oracle Maven Repository, you must use Maven 3.0.4 or later and make a few modifications to your Maven settings and project POM, 
+as described in Section 6.3, Section 6.4, and Section 6.5.
+
+Note that due to changes made in Maven 3.1, some Maven plugins developed for Maven 3.0.n may not work properly with Maven 3.1.n (or later). 
+Oracle recommends that you use the version of Maven recommended by your particular Oracle Fusion Middleware release.
