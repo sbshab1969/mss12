@@ -1,1 +1,1 @@
-java -jar target/mss12-12.0.1.jar
+java -jar target/mss-12.0.1.jar
